@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import type { TickData, SimConfig, SimStatus } from "../types/simulation";
 
-const WS_URL = "ws://localhost:8000/ws/simulation";
+const WS_URL = `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}/ws/simulation`;
 
 export interface SimulationState {
   status: SimStatus;
